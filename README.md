@@ -1,1 +1,1 @@
-# onomic-vs.-Statistical-Significance-Tree-Based-vs.-Deep-Learning-in-Bitcoin-Trading
+# Eonomic-vs.-Statistical-Significance-Tree-Based-vs.-Deep-Learning-in-Bitcoin-Trading
