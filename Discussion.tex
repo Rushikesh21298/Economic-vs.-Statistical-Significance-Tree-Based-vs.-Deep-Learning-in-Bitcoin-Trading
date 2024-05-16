@@ -1,0 +1,115 @@
+% ------------------------------------------------------------------------
+% -*-TeX-*- -*-Hard-*- Smart Wrapping
+% ------------------------------------------------------------------------
+\def\baselinestretch{1}
+
+\chapter{Discussion}
+
+\def\baselinestretch{1.44}
+
+%%% ----------------------------------------------------------------------
+The use of machine learning models to forecast the intricate changes in Bitcoin prices has revealed both opportunities and difficulties. This section aims to offer a thorough analysis of the results, taking into account both the advantages and disadvantages of our method.
+
+\section{Interpretation of Findings}
+
+\textbf{Model Distinctions:}
+
+-	Multiple decision trees are used by the Random Forest model, an ensemble method, to create predictions. As non-linearities and interactions between characteristics are frequent in financial datasets, this model excels at capturing them (Breiman, 2001). The temporal dependencies, which are critical in time series data like Bitcoin prices, are not automatically taken into consideration.
+
+-	On the other hand, the LSTM (extended Short-Term Memory) model, a kind of recurrent neural network, is especially suited for time series forecasting since it is explicitly built to recognize and recall across extended sequences \citep{Hochreiter1997LongSM}. It is a good option for our dataset because of its ability to retain previous information, which helps in capturing temporal trends.
+
+\textbf{Performance metrics}
+
+-	The performance of the models was quantified using metrics including RMSE, Accuracy, Precision, and Recall. Although both models produced fantastic results, it's important to assess them in light of the volatility of the Bitcoin market. High accuracy doesn't always convert into financial advantages, underscoring the significance of the chosen trading strategy \citep{bao2017deep}.
+
+\textbf{Economic Implications}
+
+-	The large profits made by both models demonstrate their applicability in the context of the current trading environment. For traders and investing algorithms, the LSTM's capacity to benefit from "long or short" strategies in particular may prove to be a priceless asset \citep{krauss2017deep}.
+
+\textbf{Optimal Training Window}
+
+-	The investigation of different training window sizes produced an unusual finding. The best window size for our dataset was determined to be 70 percent for the Random Forest model, contrary to what one might expect as more historical data is generally thought to result in better predictions. The dynamic nature of financial time series data and the significance of model retraining to accommodate current developments are highlighted by this. \citep{baumeister2015sign}.
+
+\textbf{Comparative Insights}
+
+-	Although both models showed promise, they are ideal for various situations due to their individual strengths. The Random Forest can be useful for determining feature importance and for helping traders make wise judgments because of its interpretable properties. The LSTM, on the other hand, maybe more suitable for high-frequency trading given its deep learning capabilities, where the ability to spot minute patterns in data might result in significant profits. \citep{sirignano2019universal}.
+
+\section{Implications in Bitcoin Trading}
+
+-  When Bitcoin first appeared, the financial world was completely changed since it provided a decentralized alternative to established fiat currencies. The price of Bitcoin, the most well-known cryptocurrency, is regularly monitored, and its market dynamics are thoroughly examined. The use of machine learning to forecast Bitcoin price changes has broad repercussions, especially when using complex models like Random Forest and LSTM. Here is a look at how these computational approaches may have broader implications for the Bitcoin trading industry.
+
+\textbf{Incorporation of External Factors }
+
+-	\textbf{Holistic Market View:} Machine learning models can combine several datasets, allowing traders to take into account a variety of external factors in addition to previous pricing. Global economic events, geopolitical unrest, changes in the law, and technological developments in the blockchain industry could all fall under this category. The models can give traders a more thorough understanding of potential price drivers by analyzing such a large and diverse amount of data\citep{GANDAL201886}.
+
+-	\textbf{Real-time Adaptability: }These models can be dynamically updated with fresh data because of this. The algorithms may update their forecasts as world events develop, preventing traders from being caught off guard by unexpected market changes sparked by outside events.
+
+\textbf{Algorithmic Trading Strategies:}
+
+-\textbf{	Reactive Algorithms:} Trading algorithms can be improved by predictive models, making them more receptive to changes in the market that occur in real-time. With such flexibility, traders can quickly modify their methods to take advantage of fleeting market opportunities or avoid unexpected downturns \citep{DBLP:journals/cacm/TreleavenGL13}.
+
+-	\textbf{Strategic Automation}: Trade execution can be automated by using machine learning's accuracy. Trading professionals can automate buy/sell choices, guaranteeing they never miss a profitable trading window, by defining predetermined conditions based on model outputs.
+
+\textbf{Behavioral Analysis:}
+
+-	\textbf{Sentiment Gauge}: In addition to using numerical data, machine learning models can comb the web and analyze a tonne of text from forums, social media, news stories, and other sources. This allows them to determine whether the general attitude towards Bitcoin is one of bullish exuberance or bearish pessimism\citep{kristoufek2015main}.
+
+-	\textbf{Predictive Sentiment Analysis:} These algorithms can provide insights into the future by comparing previous price movements with sentiment data from the past. An increase in optimistic emotion, for instance, can signal to traders the impending price rebound.
+
+\textbf{Diversification Strategies:}
+
+-	\textbf{Correlation Insights:} Machine learning techniques can clarify the complex connections between Bitcoin and other financial assets through correlation insights. Trading firms might more effectively diversify their portfolios, distributing risks and perhaps increasing returns, by identifying these relationships \citep{phillips2017predicting}.
+
+-	\textbf{Asset Synergy:} Traders can carefully pair their investments to protect themselves against possible losses, for instance, if it is discovered that Bitcoin has an inverse relationship with a certain stock or commodity.
+
+\textbf{Scalability:}
+
+-	\textbf{Efficiency in Data Processing:} Processing large datasets quickly and effectively is one of machine learning's main advantages. This scalability guarantees that traders always have the most recent information at their fingertips in the fast-paced world of Bitcoin trading, where data is continuously generated \citep{bao2017deep}.
+
+-	\textbf{Worldwide Market Insights:} Because of its scalability, worldwide market data may also be integrated, guaranteeing that traders are educated by a global viewpoint as well as localized data.
+
+\textbf{Cost Efficiency: }
+
+-	\textbf{Improved Trade Timing:} Traders can time the execution of their trades more effectively with more accurate predictions. Due to their ability to avoid buying at high points or selling at low points, this can result in lower transaction costs \citep{hendershott2011does}.
+
+-	\textbf{Strategic Order Placement: }In addition, traders can place limit or stop orders more wisely with knowledge of expected price fluctuations, resulting in more favorable trade executions.
+
+\textbf{Enhanced Security}
+
+-	\textbf{Fraud detection:} Improving transactional security can be facilitated by machine learning. These models can swiftly identify abnormalities, including recognizing fraudulent activity or unauthorized access, by analyzing trends in transaction data \citep{bahnsen2015example}.
+
+-	\textbf{Risk management}: Furthermore, by foreseeing probable market declines, traders can be informed to close their positions or set stop-loss orders, protecting their investments from significant losses.
+
+\section{Drawbacks of the Study:}
+
+No matter how carefully planned and carried out, every thorough study has certain inherent limits. The effort to use machine learning methods like Random Forest and LSTM to forecast changes in the price of Bitcoin is not an anomaly. Here, we list and explore the main drawbacks of this study:
+
+\textbf{1. Historical Data Dependence:}
+
+\textbf{Relevance Over Time:} Making forecasts primarily based on historical data implies that past trends will continue into the future. The usefulness of historical data is ephemeral because of the myriad of dynamic factors that affect financial markets, including cryptocurrency \citep{tay2001application}.
+
+\textbf{Overfitting Concerns:} Complex machine learning models, like LSTM, may occasionally "overfit" to the data, capturing noise rather than the underlying trend. The model's performance on unobserved data may suffer from such overfitting \citep{DBLP:journals/jcisd/HawkinsBM03}.
+
+\textbf{2. Exclusion of Exogenous Factors:}
+
+\textbf{Limited Scope of Data:} Since the study's primary focus was on price data, it may have overlooked other effects that could have had a large impact on Bitcoin pricing, such as regulatory changes, technological improvements, or macroeconomic considerations \citep{bouri_hedge_2017}.
+
+\textbf{Sentiment Analysis:} The mood expressed in news stories, on social media, or by well-known people can have a big impact on the price of Bitcoin. The inability to capture abrupt market feelings due to the omission of such sentiment data can be a drawback \citep{kristoufek2015main}.
+
+\textbf{3. Model Complexity:}
+
+\textbf{Computing Demand:} Particularly with deep learning models like LSTM, there may be significant computational requirements that call for specialized hardware and may make real-time predictions difficult \citep{Goodfellow-et-al-2016}.
+
+\textbf{Interpretability:} Models like Random Forest and LSTM are sometimes referred to as "black boxes," meaning that it is unclear how they operate inside and how they make decisions. This lack of openness among traders may impede trust and broader adoption \citep{DBLP:conf/kdd/Ribeiro0G16}.
+
+\textbf{4. Market Dynamics:}
+
+\textbf{High Volatility:} Bitcoin and other cryptocurrencies in particular are infamously unstable. Unpredictable variables, including rapid market panics or irrational exuberance, can be the cause of this volatility \citep{GANDAL201886}.
+
+\textbf{Manipulative Activities:} Practices like "pump and dump" strategies have the potential to unpredictable skew price movements. Models may be misled by such manipulative strategies, particularly if the training data includes instances of market manipulation \citep{griffin2020bitcoin}.
+
+\textbf{5. Generalizability Concerns:}
+
+\textbf{Asset Specificity:} Although the study concentrated on Bitcoin, its conclusions could not be directly transferable to other cryptocurrencies or financial assets due to different market dynamics \citep{corbet2018bitcoin}.
+
+\textbf{Temporal Limitations:} The time period selected for data collection may not have included all important developments affecting Bitcoin prices. According to \cite{bao2017deep}, models that have been trained on specific time frames may not generalize well to future periods with different market conditions.

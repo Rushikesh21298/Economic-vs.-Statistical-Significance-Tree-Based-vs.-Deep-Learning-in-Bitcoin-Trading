@@ -1,0 +1,348 @@
+% ------------------------------------------------------------------------
+% -*-TeX-*- -*-Hard-*- Smart Wrapping
+% ------------------------------------------------------------------------
+\def\baselinestretch{1}
+
+\chapter{Methodology Design}
+
+\def\baselinestretch{1.44}
+
+%%% ----------------------------------------------------------------------
+
+This chapter presents the methodical technique used in this work to analyze and contrast the statistical and economic significance of deep learning models and tree-based ensembles in predicting Bitcoin trading directions. 
+   
+\smallskip
+
+%%% ----------------------------------------------------------------------
+\goodbreak
+\section{Research Design}
+\goodbreak
+
+\subsection{Research Paradigm }
+
+The positivist paradigm, which this research largely adheres to, emphasizes objective measurements and the empirical examination of data in order to identify patterns and draw reliable conclusions \citep{alma9924678548402466}. This paradigm offers the best basis for the investigation given the numerical nature of trade data and the empirical aspects of machine learning.
+
+\subsection{Research Approach}
+
+The study uses a quantitative research methodology. Given that the study used historical Bitcoin trading data and computational models, this is characterized by the use of numerical data and quantitative analysis \citep{creswell2014research}.
+
+\subsection{Data Collection}
+
+For this study, historical Bitcoin trade data that included daily trading metrics including prices, volume, and other trading indicators was gathered.
+
+The dataset was obtained from (for example," Yahoo Finance") and covered the period from (01/01/2021) to (05/07/2023).
+
+\subsection{Data preparation}
+
+The dataset received extensive preprocessing to guarantee the correctness and dependability of the models. This comprised:
+
+-	dealing with missing values.
+
+-	detection and correction of outliers.
+
+-	Feature engineering: To gain insight into daily percentage changes in closing prices, 
+variables like "Return" were computed.
+
+-	Data normalization: It is crucial, especially for LSTM and other deep learning models.
+
+\subsection{Model Development }
+
+There were two primary models chosen:
+
+\textbf{Tree-based Ensemble:} To be more precise, the Random Forest Classifier was used to forecast the movement of the Bitcoin price.
+
+\textbf{Deep Learning Model:} To capture the sequential character of the trading data, the LSTM (Long Short-Term Memory) network, which is particularly well suited for time series prediction, was used as the deep learning model.
+
+Both models were evaluated on a subset of the data (i.e., 70 percent of the dataset). which is Train data and then the rest 30 percent of the dataset is known as the Test dataset.
+
+\subsection{Model Evaluation}
+
+Several performance criteria were taken into account in order to compare the two models
+Statistical and economic significance:
+
+-	Accuracy
+
+-	Recall, precision, and F1 score
+
+-	RMSE, or Root Mean Square Error
+
+-	economic indicators, such as possible gains or losses from trading plans based on model predictions.
+
+\medskip
+
+\section{Data Collection and Pre-processing}
+
+The caliber and type of data are crucial in the fields of machine learning and deep learning. This part explores the sources of the data, the standards used to choose it, and the techniques used to guarantee its accuracy for the study.
+
+\subsection{Data Sources}
+
+Yahoo Finance is a credible platform that offers historical data on cryptocurrency prices, trading volumes, and other important market indicators. This platform provided the primary data for this study. Due to its extensive data coverage, regular updates, and general acceptance in financial research on cryptocurrencies, this platform was selected \citep{smith2016predictive}.
+
+\subsection{Selection Criteria}
+
+For the data, the following standards were established:
+
+\textbf{Timeframe:} The data spans ["from January 1, 2021, to July 05, 2023"], guaranteeing a rich set of historical data while also capturing current market movements.
+
+\textbf{Frequency:} Daily closing prices were employed. This frequency was chosen to capture large price changes while reducing intraday volatility.
+
+\textbf{Data Completeness:} Only data sets without any missing values for the designated indicators were taken into consideration.
+
+\subsection{Preprocessing Steps}
+
+Several preparation processes were used because raw financial data frequently contains imperfections:
+
+-	\textbf{Cleaning}: Anomalies, outliers, and missing values were checked in the initial data. 
+Imputation was done using linear interpolation in cases where there were missing data points.
+
+-	\textbf{Normalisation:} The data was normalized, often scaling the values between 0 and 1, to make the training process more stable and quicker, especially for the LSTM model \citep{Goodfellow-et-al-2016}.
+
+-	\textbf{Feature Engineering:} New features, including technical indicators, moving averages, and historical volatilities, were derived from the current data to give the models more contextual information.
+
+-	\textbf{Data Splitting:} The dataset was split into training (70 percent) and testing (30 percent) sets in order to assess the performance of the models.
+
+\goodbreak
+
+\section{Random Forest Model}
+
+During training, many decision trees are built using the ensemble learning technique known as random forests, which then produce the majority class for classification or the average prediction for regression. Because individual tree forecasts are averaged, random forests have the advantage of being somewhat resistant to overfitting and being able to model non-linear decision boundaries and feature interactions.
+
+\subsection{Model Development}
+
+The steps taken to create the Random Forest model for forecasting Bitcoin price movement are described in this subsection:
+
+\textbf{Data Preprocessing:}
+
+-	The dataset, which includes the closing prices for Bitcoin each day, has been loaded.
+
+-	The calculated 'Return' shows the percentage change in the closing price from the previous day.
+
+-	In order to indicate whether the return is positive (1) or not (0), a binary target variable is established.
+
+\textbf{Feature Selection:}
+
+-	The feature matrix, X, is created by removing unnecessary columns from the dataset, including "Date," "Return," and "Close."
+
+\textbf{Data Splitting:}
+
+-	The dataset is divided into training windows of various sizes, including 50 percent, 60 percent, 70 percent, and 80 percent. Tests are conducted using the remaining data. This configuration looks at the effects of changing the training window on the model's performance.
+
+-	In order to maintain the data's temporal order during cross-validation, Timeseries Split is used on the training set of data.
+
+\textbf{Model Training:}
+
+-	One hundred trees are used to initialize a RandomForestClassifier.
+
+-	The model is trained on the training fold and validated on the validation fold during cross-validation. This procedure is repeated for each fold, enabling an evaluation of the model's performance and stability over time.
+
+\subsection{Model Evaluation}
+
+This section assesses how well the Random Forest model performs:
+
+\textbf{Test Set Evaluation:}
+
+-	The model is retrained on the complete training set following cross-validation, and it is then assessed on the test set. This is an estimate of the model's performance on brand-new, untested data.
+
+\textbf{Performance metrics:}
+
+-	Between the anticipated probabilities and the actual binary outcomes, the Root Mean Square Error (RMSE) is determined. The model's prediction error is estimated by RMSE.
+
+-	For both positive and negative classes, classification reports are created that include metrics like precision, recall, and the F1-score. This clarifies how well the algorithm can forecast both price increases and declines.
+
+\textbf{Trading Strategy Evaluation:}
+
+-	It uses a "Long or Short" trading approach. Buying when the model predicts a price increase and selling short when a reduction is anticipated is simulated in this way.
+
+-	In order to illustrate the economic importance of the model's predictions under various training circumstances, the cumulative profit/loss over time, depending on this technique, is plotted for each training window size.
+
+\textbf{Visualizations:}
+
+-	The cumulative profit/loss curve and estimated return probabilities are displayed on graphs. This gives a visual depiction of the forecasts and economic impact of the model.
+
+\goodbreak
+
+\section{LSTM (Deep Learning) Model}
+
+Long Short-Term Memory (LSTM) is a special sort of Recurrent Neural Network (RNN). RNNs use loops to store information rather than the independent processing of inputs found in traditional neural networks \citep{Hochreiter1997LongSM}. Standard RNNs, on the other hand, frequently struggle with long-term dependencies because of problems like vanishing or ballooning gradients. With their unique architecture, LSTMs efficiently handle these issues.
+
+Why Do we use LSTM for time series forecasting?
+
+Data points in a time series are sequential and exhibit a temporal association. Because they are designed specifically to identify patterns over time, LSTMs are well-suited for applications where the sequence and order of data points are important, such as stock price prediction or weather forecasting \citep{DBLP:conf/nips/SutskeverVL14}.
+
+For instance, when anticipating Bitcoin prices, a variety of events from days, weeks, or even months ago may have an impact on the price today. For such forecasting tasks, LSTMs are a great option since they may be able to identify and record these long-term dependencies and trends \citep{moghar2020stock}.
+
+\subsection{Model Development }
+
+\textbf{Data Preparation:}
+
+The data is normalized before training to ensure that all input features scale equally, often between 0 and 1. The training process is aided by such scaling, making it more effective and stable.
+
+\textbf{Model Architecture:}
+
+In this situation, the LSTM model consists of:
+
+-	\textbf{Input LSTM Layer:} Bitcoin price sequences are processed by the input LSTM layer, which then produces another sequence suitable for the output LSTM or Dense layer \citep{Hochreiter1997LongSM}.
+
+-	\textbf{Dense Layer:} This layer of a typical neural network connects every input node to every output node. It analyses the output sequence from the LSTM layer above and outputs a single value, the projected price.
+
+The backpropagation over time iterative approach is used to train the model on previous Bitcoin data.
+
+\subsection{Model Evaluation:}
+
+\textbf{Trading Strategy Implementation:}
+
+The model's predictions are used to develop a "long or short" trading strategy:
+
+-	If the model foresees an increase in price (bullish sentiment), a long position is taken, which implies buying the asset.
+
+-	In contrast, a short position is opened if a downward movement is anticipated (bearish attitude), wagering against the asset in anticipation of a decline in value.
+
+Although this technique provides a basis for review, it is a simplification and might not accurately reflect the nuances of real-world trading.
+
+\textbf{Visualizing Predictions}: 
+To understand the model's performance, forecasts and prices are compared. Such a visual depiction makes it easy to distinguish between the model's correct predictions and its errors.
+
+\textbf{Final Portfolio Value:} Using the "long or short" technique, the final portfolio value may be calculated. In a fictitious trading scenario, this number serves as a tangible criterion to assess the model's forecasting skill.
+
+\textbf{Training Window Size Impact:} The model's performance is also evaluated using a range of historical data (such as 60 percent, 70 percent, etc.). Such an assessment aids in calculating the ideal amount of historical data needed for the best results.
+
+\textbf{Insights:}
+
+With their innate design, understanding LSTM models excel at forecasting time series data, such as Bitcoin values. There are a couple of limitations, though:
+
+-	Many of the factors that affect financial markets may not be present in historical pricing data.
+
+-	Although LSTMs are capable of detecting long-term dependencies, they are not perfect. It is crucial to regularly assess models and update them with fresh data \citep{moghar2020stock}.
+
+\goodbreak
+
+
+
+\subsection{Data Load and PreProcessing}
+
+A structured dataset is loaded with Bitcoin trading data from a CSV file. To simplify time-based operations, the dataset's 'Date' items are transformed into a standardized date-time format. After that, the data is chronologically arranged. The daily percentage change in the closing prices of Bitcoin is calculated and displayed in a new column named "Return." For trading strategy implementation, this "Return" is crucial. The retrieved Bitcoin closing values are then scaled between 0 and 1. For deep learning models like LSTMs in particular, this scaling is an essential preprocessing step that makes sure the model converges more quickly and performs better.
+
+\subsection{LSTM Model With Adjusted (No of Days)}
+
+\textbf{Model Training and Prediction:}
+
+- Based on a predetermined number of days, the data is divided into training and validation datasets.
+
+- On the training dataset, the LSTM model is trained. It gains the ability to predict, using today's price, the closing price for the following day.
+
+- The model predicts the closing prices on the validation dataset following training.
+
+\textbf{Trading Strategy Implementation:}
+
+- Based on the model's predictions, a "long or short" trading strategy is created.
+
+- If the model predicts that the price will be higher than it is today on the next day, a "long" position is taken, and if it predicts that the price will be lower, a "short" position is taken.
+
+- Daily changes are made to the beginning capital depending on the real return to reflect any gains or losses from the approach.
+
+
+\section{Comparative Analysis Method}
+
+\goodbreak
+
+Long Short-Term Memory (LSTM) networks, a sort of deep learning model, and the Random Forest, a tree-based ensemble method, were both used to predict Bitcoin prices. We can systematically analyze these two approaches using comparative analysis to ascertain their relative merits and shortcomings in the context of our particular issue.
+
+\subsection{Data and Metrics Selection: }
+
+\textbf{Data:} The same Bitcoin price dataset was used to train and assess both the LSTM and the Random Forest models. This guarantees that the comparison is solely focused on the capabilities of the models and is unaffected by any data inconsistencies.
+
+\textbf{Metrics:} We mainly concentrated on the models' capacity to make profits using a trading strategy for our specific problem of predicting Bitcoin prices. The accuracy of the models' predictions could also be evaluated using other metrics, such as Mean Squared Error (MSE) \citep{DBLP:books/lib/HastieTF09}.
+
+\subsection{Analysis Process}
+
+\textbf{LSTM (Deep Learning Model):}
+
+
+\textbf{Model Complexity:} Recurrent neural networks, such as LSTMs, are intrinsically complicated and computationally demanding. Their memory cells, which can record long-term dependencies, make them particularly skilled at managing time series data.
+
+\textbf{Training Time:} Training an LSTM may be time-consuming and frequently calls for specialized gear like GPUs, especially when dealing with large amounts of data.
+
+\textbf{Performance:} Non-linear patterns in the data may be captured by LSTMs that simpler models may miss.
+
+\textbf{Random Forest (Ensemble Model):}
+
+
+\textbf{Model Complexity:} Random Forests are ensemble techniques that are based on trees. Although each tree is straightforward on its own, integrating other trees makes the model more complex.
+
+\textbf{Training Time:} Usually quicker than training deep learning models like LSTMs, but with huge datasets or a lot of trees, it might still take a while.
+
+\textbf{Performance:} Random Forests have a reputation for being highly accurate and capable of handling non-linear data patterns. Additionally, they convey feature importance by revealing which traits have the greatest impact on predictions \citep{breiman_random_2001}.
+
+\subsection{Insights and Interpretations:}
+
+Following a thorough investigation, the following conclusions can be drawn:
+
+
+\textbf{Trading Strategy Performance:} In our particular situation, the main objective was to maximize profits using a trading technique. To assess both models' applicability in the actual world, they were included in trading strategies.
+
+
+\textbf{Model Suitability:} LSTMs are capable, however for some datasets, they may be overkill. It could be desirable if the Random Forest can achieve comparable performance with less complexity and quicker training timeframes.
+
+
+\textbf{Infrastructure and Resources:} More computational resources are often needed for LSTMs. Random Forest might be a better option if resources are few.
+
+\textbf{Insights:}
+
+Both Random Forest and LSTM offer particular advantages. The capacity to capture long-term dependencies in time series data may be where LSTMs shine, but Random Forests combine accuracy, interpretability, and minimal processing requirements. Based on the individual issue, the available resources, and the intended results, one should select one over the other (Demsar, 2006).
+
+\medskip
+
+\section{Summary} 
+
+We set out on a thorough methodological journey to forecast Bitcoin values in this chapter, contrasting deep learning models with ensembles that are built using trees. Here is a brief summary:
+
+\textbf{1. Research Design:}
+
+The research, which had its roots in the positivist paradigm, placed a strong emphasis on the objective, empirical analysis of trade data to find trends and conclusions.
+
+Given that the study was mostly based on historical Bitcoin trading data, a quantitative research methodology was employed, utilizing numerical data and analysis methodologies.
+
+\textbf{2.Data Collection and Preprocessing:}
+
+The foundation of this study was historical Bitcoin trade data, which comprised a wide range of trading parameters. After gathering the data, the following preprocessing procedures were used:
+
+-	cleaning, which involved fixing abnormalities, outliers, and missing values.
+
+-	Normalization is done largely to keep the training process stable.
+
+-	Additional contextual features were extracted using feature engineering.
+
+-	Splitting data for training and testing.
+
+\textbf{3. Model Exploration:}
+
+\textbf{Random Forest:}
+
+Random Forest, a method of group learning, was used. During training, it builds a number of decision trees and generates an average result. It is renowned for its capacity to simulate non-linear data and provide perceptions of key elements.
+
+\textbf{LSTM (Deep Learning Model):}
+
+A subgroup of RNNs called LSTMs was first developed. They are skilled at managing time series data thanks to their memory cells, which makes them suitable for forecasting data points that are sequential and display temporal correlations, such as Bitcoin values.
+
+\textbf{4. Comparative analysis:}
+
+The LSTM and Random Forest models were compared side by side. In this analysis, different aspects of both models were examined, such as:
+
+-	Model Complacency.
+
+-	Training time.
+
+-	Performance.
+
+-	Real-world Applicability
+
+It was concluded that while Random Forests offer a blend of accuracy, interpretability, and efficiency, LSTMs excel at capturing long-term dependencies. The decision between the two is based on the requirements of the particular project, the computational resources at hand, and the intended results.
+
+This chapter essentially offered a thorough framework for forecasting Bitcoin prices, emphasizing the distinctive advantages and potential drawbacks of both LSTM and Random Forest models. It offers scientific rigor and useful insights, serving as a road map for anyone wishing to explore the complex world of Bitcoin price prediction.
+
+   
+
+\def\baselinestretch{1.66}
+\medskip
+
+%%% ----------------------------------------------------------------------

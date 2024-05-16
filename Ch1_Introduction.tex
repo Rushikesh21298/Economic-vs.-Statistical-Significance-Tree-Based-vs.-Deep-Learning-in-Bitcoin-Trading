@@ -1,0 +1,276 @@
+% ------------------------------------------------------------------------
+% -*-TeX-*- -*-Hard-*- Smart Wrapping
+% ------------------------------------------------------------------------
+\def\baselinestretch{1}
+
+\chapter{Introduction}
+
+\def\baselinestretch{1.44}
+
+%%% ----------------------------------------------------------------------
+
+Numerous technologies have emerged and flourished in the digital age, but few have been as ground-breaking and divisive as cryptocurrencies. Bitcoin, a decentralized cryptocurrency that has challenged established monetary systems and provided an alternate means of financial transaction, is at the forefront of this digital financial frontier. This introduction aims to contextualize the importance of Bitcoin and examine the analytical techniques, in particular the comparative effectiveness of tree-based ensembles and deep learning models, in foretelling Bitcoin price changes. 
+   
+
+\smallskip
+
+%%% ----------------------------------------------------------------------
+\goodbreak
+\section{Background and Context}
+
+Bitcoin has been the focal point of a financial revolution ever since it was created in 2009 by an unidentified person or group known only as Satoshi Nakamoto. It was designed as a peer-to-peer electronic cash system with the promise of democratizing finance by doing away with middlemen and enabling quicker, more transparent transactions \citep{article}. Blockchain technology, a digital ledger where transactions are recorded chronologically and openly, supports the decentralized character of Bitcoin.
+
+\smallskip
+
+However, there has been a lot of volatility throughout Bitcoin's history. Its valuation, which had previously been a simple cryptography experiment, had experienced an exponential increase, especially in the years 2017 and 2018, only for it to afterward suffer abrupt falls. This volatility highlights the cryptocurrency's sensitivity to multiple causes, from regulatory choices to macroeconomic events, and is not only a trader's worst nightmare\citep{GANDAL201886}
+
+\smallskip
+
+Predicting the price trend of Bitcoin has become crucial for both investors and experts due to the huge stakes involved. Even though they are informative, conventional financial forecasting techniques frequently fail to adequately account for the many subtleties of cryptocurrencies. This restriction sparked the development of more complex forecasting models that tapped into machine learning and artificial intelligence.
+
+\smallskip
+
+Two modeling strategies have attracted a lot of interest within this analytical range: tree-based ensembles and deep-learning models. Decision trees are used by tree-based models, such as the Random Forest, to provide insights, which makes them understandable and useful for a variety of predicting applications. In contrast, deep learning models, particularly  \gls{lstm} networks, use artificial neural networks, which enable them to handle sequential, time-series data with ease \citep{Hochreiter1997LongSM}. Understanding the relative efficiency of these models becomes essential given that Bitcoin prices are transitory.
+
+\smallskip
+
+This study aims to close this analytical gap. It seeks to shed insight into their relative strengths, shortcomings, and applicability in forecasting Bitcoin's price changes by contrasting tree-based ensembles with deep-learning models.
+
+The dissertation will expand on the nuances of these models, their application, and their performance indicators in the following parts. It aims to provide insights that could direct future predictive endeavors in the field of bitcoin trading through meticulous quantitative analysis.
+
+\section{Motivation of the Study}
+
+Both the general public and the academic community are interested in the rapidly expanding world of cryptocurrencies, with Bitcoin at the forefront. For traders, investors, and researchers alike, Bitcoin offers distinctive prospects as an alternative asset class. However, because of the considerable volatility of cryptocurrency prices, these prospects also present substantial hurdles. Predicting Bitcoin price changes with accuracy can help traders develop lucrative trading methods and gain a better knowledge of the elements that affect the cryptocurrency market.
+
+Traditional financial models frequently have trouble capturing the subtleties and complexities of the cryptocurrency market. On the other hand, modeling and forecasting Bitcoin prices using machine learning, particularly deep learning models like LSTM, is a promising approach. 
+
+These models are especially well suited for the intricate and quick-moving Bitcoin market because they can automatically identify patterns from historical data without the need for manual feature engineering.
+
+Additionally, the combination of trading tactics and predictive models can reveal useful information about possible real-world uses for these forecasts. Understanding how predictive models can be applied in real-world trading situations will allow us to evaluate their true financial ramifications, making the subject both theoretically and practically significant.
+
+In order to determine how well trading strategies based on these forecasts perform, this dissertation will investigate the potential of machine learning models, particularly LSTM. The goal is to increase academic understanding while also giving traders, investors, and policymakers other stakeholders practical insights that will have interest in the crypto market.
+
+\goodbreak
+\section{Problem Statement}
+The boundaries of the financial environment have been redrawn as a result of the spread of digital currencies, with Bitcoin at the forefront. Bitcoin has experienced remarkable volatility since its launch in 2009, grabbing the interest of both investors and researchers. Strategic advantages in the trading world and huge economic gains could result from the ability to correctly forecast price swings. However, because of its decentralized structure, sensitivity to world events, and the complexity of cryptocurrency marketplaces, predicting the price of Bitcoin remains a problematic task \citep{article}.
+
+\smallskip
+
+In the past, time series analyses and linear models have been the mainstays of traditional statistical techniques used to make forecasts about the financial markets. Despite various degrees of success, these techniques frequently fail when used on non-linear, complicated datasets like those seen in the world of cryptocurrency \citep{smith2016predictive}. As the Bitcoin market developed, it became clear that its price movements were influenced by a wide range of external factors, from geopolitical events to global economic indicators, in addition to the prior price's autoregressive nature.
+
+\smallskip
+
+Enter machine learning algorithms, which during the past ten years have significantly impacted the field of financial forecasting. These models offered a viable substitute for conventional approaches due to their capacity to uncover intricate patterns and relationships in data \citep{brownlee2018introduction}. Tree-based ensembles, in particular Random Forests, have become more popular among them as a result of their durability and propensity to manage non-linearity. Parallel to this, the development of deep learning has led to the emergence of models like \gls{lstm} networks that have the potential to revolutionize the field of Bitcoin price prediction by identifying long-term dependencies in time-series data \citep{10.5555/3203489}.
+
+\smallskip
+
+The question of which of these cutting-edge models—tree-based ensembles or deep learning networks—holds the advantage in terms of economic and statistical importance in predicting Bitcoin trading directions still remains, though. A thorough comparison study is strikingly lacking in the present body of literature, despite the fact that individual research has independently examined the effectiveness of these models \citep{johnson2020deep}.
+
+\smallskip
+
+There are two difficulties. The first is the technological difficulty involved in fine-tuning and optimizing these models for maximum performance. There are numerous hyperparameters included with both Random Forests and \gls{lstm}, and the ideal values depend on the particulars of the dataset being used. Second, and probably more importantly, trading strategies must be developed from the raw model outputs. When predictions are subjected to the vicissitudes of real-world trade, a model that boasts excellent accuracy in a controlled experimental environment may fail \citep{Goodfellow-et-al-2016}.
+
+\smallskip
+
+The identification and measurement of the respective qualities of tree-based ensembles and deep learning models in the particular setting of Bitcoin trading is the challenge that this research aims to solve. This study seeks to close the information gap and provide traders, investors, and academics with clear, practical insights by developing a rigorous comparative approach.
+
+%%% ----------------------------------------------------------------------
+\goodbreak
+\section{Aims and objective}
+For financial experts, investors, and academics, the evolving world of cryptocurrencies, with Bitcoin at its head, offers both difficulties and opportunities. The demand for precise predictive models increases as the volatility of Bitcoin's value fluctuates, sometimes in an unpredictably surprising way. This study, titled "A Comparison of the Economic and Statistical Significance of Tree-Based Ensembles and Deep Learning Models in Bitcoin Trading," aims to shed light on this complex field.
+\smallskip
+
+%%% ----------------------------------------------------------------------
+\goodbreak
+\subsection{Aim}
+The world of cryptocurrencies has distinguished itself as a distinctive and complex environment in the large field of financial forecasting. As the leader of this digital currency revolution, Bitcoin poses a dilemma that veers between its large economic potential and its unpredictably fluctuating price movements. Because of its global reach, decentralized structure, and sensitivity to a wide range of outside events, Bitcoin is unpredictable, necessitating the development of a strong prediction mechanism.
+
+\smallskip
+
+Therefore, the main goal of this research is not simply to forecast these price changes but also to comprehend, assess, and contrast the methods used to make them. Tree-based ensembles, with a focus on the Random Forest method, and deep learning models, notably the\gls{lstm} networks, represent this machinery in our study. Both of these paradigms have a unique mix of complexities and promises.
+
+\smallskip
+
+Q1)	Why Bitcoin, you ask?
+
+\smallskip
+
+Despite the fact that there are many cryptocurrencies in use today, Bitcoin stands out because of its innovation, market value, and impact on other cryptocurrencies \citep{article}. Therefore, forecasting its price movements has implications that go beyond that of a single currency and may be able to provide information about the larger cryptocurrency market.
+
+\smallskip
+
+Q2)	Why use \gls{lstm} and tree-based ensembles?
+
+\smallskip
+
+These two models show how conventional statistical techniques and cutting-edge computing methods can coexist. Tree-based ensembles, particularly the Random Forest, combine the ease of decision trees with the effectiveness of ensemble learning to produce a robust and comprehensible model \citep{liaw2002classification}. On the other hand, \gls{lstm} networks are ideal for time-series data like Bitcoin prices because they can remember long-term dependencies \citep{Hochreiter1997LongSM}. Therefore, the goal is to provide a comprehensive understanding of the applicability of these various approaches while bridging the gap between them.
+
+\smallskip
+
+
+Q3)	Beyond Predictions? 
+
+\smallskip
+
+This study's ultimate goal goes beyond just making price forecasts. The project aims to give stakeholders in the Bitcoin ecosystem a complete toolkit by contrasting tree-based ensembles and \gls{lstm}. This includes investors seeking stability over the long term, traders seeking quick profits, and even academics working to advance the study of financial forecasting in the context of cryptocurrencies.
+
+\smallskip
+
+%%% ----------------------------------------------------------------------
+
+In conclusion, the goal is to launch a scientific, data-driven investigation into the field of Bitcoin price prediction, providing clarity, insights, and useful intelligence through the prism of two potent predictive models.
+
+
+%%% ----------------------------------------------------------------------
+\goodbreak
+\subsection{Objective}
+
+   \textbf{1. Understanding the complexity of Bitcoin price movements: }
+
+\smallskip
+
+Unlike conventional fiat currencies, bitcoin is influenced by a wide range of factors. The cryptocurrency responds to a wide range of factors, including alterations in regulations, technological improvements, market mood, and fluctuations in the global economy \citep{BARIVIERA20171}. It is first important to debunk these influencers in order to create the groundwork for model creation.
+
+\smallskip
+
+\textbf{2.	Explore the Complexities of Tree-based Ensembles:}
+
+\smallskip
+
+The interpretability and robustness of tree-based models, particularly Random Forest, have been praised \citep{breiman_random_2001}. They provide a level of simplicity without compromising accuracy by building several decision trees during training and producing the mean prediction for regression or the mode of the classes for classification. This study intends to carefully examine the implementation's intricacies and applicability to forecasting Bitcoin prices.
+
+\smallskip
+
+\textbf{3.	Examine LSTM's Time Series Forecasting Potentials:}
+
+\smallskip
+
+A subset of \gls{rnn} called LSTM networks excels at processing sequential data \citep{Hochreiter1997LongSM}. Understanding the design, benefits, and potential drawbacks of LSTM becomes essential given that Bitcoin prices are time-series data.
+
+\smallskip
+
+\textbf{4.	Quantitative Analysis of Model Performance:}
+
+\smallskip
+
+The project aims to empirically evaluate the models on historical Bitcoin data in addition to theoretical considerations. To evaluate their ability to predict outcomes, metrics including \gls{mse}, accuracy, precision, recall, and F1 score will be used \citep{DBLP:books/lib/HastieTF09}.
+
+\smallskip
+
+\textbf{5.	Economic Significance assessment:}
+
+\smallskip
+
+Most Bitcoin stakeholders have financial advantages as their ultimate objective. Therefore, it is essential to comprehend the economic ramifications of model projections. The research tries to mimic prospective economic outcomes by incorporating the models into hypothetical trading methods.
+
+\smallskip
+
+\textbf{6.	Draw Comparative Conclusions: }
+
+\smallskip
+
+The study's conclusion will be a thorough evaluation of LSTM and tree-based ensembles. The study aims to provide unambiguous recommendations on each strategy's relative usefulness in Bitcoin trading scenarios by contrasting their performance measures, ease of implementation, interpretability, and economic effects.
+
+\smallskip
+
+This research essentially follows a journey from comprehending the complex world of Bitcoin to using cutting-edge predictive algorithms to navigate its uncertainties. It seeks to illuminate potential routes that present and potential academics, traders, and stakeholders might pursue through methodical exploration and empirical assessments.
+
+%%% ----------------------------------------------------------------------
+\goodbreak
+\section{Scope of the Study}
+
+%%% ----------------------------------------------------------------------
+\goodbreak
+\subsection{Scope of the study}
+%%% ----------------------------------------------------------------------
+A research study's scope describes the restrictions or constraints within which it will work, outlining the subjects it will cover and the areas on which it will concentrate.
+
+\smallskip
+
+1. \textbf{Models in Focus: }This research predominantly targets two main predictive models:
+
+\smallskip
+
+-	Tree-based ensemble models, primarily the Random Forest Classifier.
+
+\smallskip
+
+-	Deep Learning models, specifically the Long Short-Term Memory (LSTM) networks. \citep{Goodfellow-et-al-2016}.
+
+\smallskip
+%%% ----------------------------------------
+2. \textbf{Data Range:} The study will utilize historical Bitcoin trading data, capturing daily trading metrics like prices, volume, and other trading indicators. The specific timeframe for the dataset will be defined based on data availability and relevance. \citep{alma9924678548402466}.
+
+\smallskip
+%%% ----------------------------------------
+
+3. \textbf{Geographic Relevance:} While Bitcoin is a global cryptocurrency, the data source (e.g.exchange) from which the historical trading data is derived might have geographic implications. For instance, trading patterns on an Asian exchange might differ slightly from a North American one. \citep{alma9924678548402466}.
+
+\smallskip
+%%% ----------------------------------------
+
+4. \textbf{Trading Strategy:} The research will not only assess the prediction accuracy but also the economic implications by simulating a "long or short" trading strategy based on the model predictions.
+
+\smallskip
+%%% ----------------------------------------
+
+5. \textbf{Performance Metrics:} Models will be assessed on various metrics, including but not limited to accuracy, \gls{rmse}, precision, recall, F1-score, and potential economic gains or losses from trading strategies. \citep{Goodfellow-et-al-2016}.
+
+\smallskip
+%%% ----------------------------------------
+
+6.\textbf{Comparative Analysis:} The primary aim is to juxtapose the performance, advantages, and disadvantages of tree-based ensemble models against deep learning models in the context of Bitcoin trading predictions.
+
+
+
+%%% ----------------------------------------------------------------------
+\goodbreak
+\section{Summary}
+
+
+Few developments in the field of digital finance have generated as much interest and discussion as cryptocurrencies, with Bitcoin leading the charge. The context is provided by this introduction, which describes the importance of Bitcoin in the current financial environment and the necessity for reliable analytical techniques to predict its erratic price changes.
+
+\smallskip
+%%% ----------------------------------------
+
+Bitcoin was created in 2009 by the enigmatic Satoshi Nakamoto with the goal of creating a decentralized currency without the use of conventional financial middlemen, supported by cutting-edge blockchain technology. Despite a promising beginning, Bitcoin has experienced huge price swings due to a variety of variables, including governmental changes and world economic developments. Given the significant financial ramifications connected with Bitcoin trading, this volatility highlights the need for precise forecasting systems \citep{GANDAL201886}.
+
+\smallskip
+%%% ----------------------------------------
+
+When dealing with the complexity of cryptocurrencies, conventional financial forecasting techniques frequently fall short. A new era of sophisticated predictive modeling is introduced by machine learning and artificial intelligence. Tree-based ensembles (like Random Forest) and deep learning models, notably Long Short-Term Memory (LSTM) networks, have drawn the attention of analysts in this field. While the latter, created for sequential data, uses neural networks to handle time-series datasets, the former uses the power of decision trees to produce insights that can be understood \citep{Hochreiter1997LongSM}.
+
+\smallskip
+%%% ----------------------------------------
+
+The main focus of this dissertation is a comparison of these two models in order to assess how well they are able to forecast changes in the price of Bitcoin. This project seeks to not only offer a theoretical analysis but also to simulate actual trading scenarios and examine the economic ramifications of their forecasts.
+
+\smallskip
+%%% ----------------------------------------
+
+This study does, however, work within some constraints. While Random Forest and LSTM models are the primary emphases, the research also considers the particular time period and geographic relevance of the data in an effort to provide a comprehensive yet narrowly focused investigation. The unpredictable nature of outside influences affecting Bitcoin pricing, potential processing limitations, and the mystifying nature of deep learning models are some of the fundamental difficulties associated with this investigation.
+
+\smallskip
+%%% ----------------------------------------
+
+Essentially, this introduction provides a broad overview of the Bitcoin scene, emphasizes the urgent need for reliable forecasting tools, introduces the main models being investigated, and establishes clear expectations for the research's scope and potential limitations. The voyage promises a blend of in-depth research, useful knowledge, and a thorough understanding of the two most effective predictive models in the context of Bitcoin trading.
+
+
+\bigskip
+\goodbreak
+
+%%% ----------------------------------------------------------------------
+\goodbreak
+
+\def\baselinestretch{1.1}
+ 
+%\goodbreak
+
+   
+
+
+\def\baselinestretch{1.66}
+\medskip
+
+
+%%% ----------------------------------------------------------------------
